@@ -32,7 +32,16 @@ const Signup = () => {
   const changeFileHandler = (e) => {
     setInput({ ...input, file: e.target.files?.[0] });
   };
-
+  const handleGoogleAuth = async () => {
+    dispatch(setLoading(true));
+    try {
+        window.location.href = `${USER_API_END_POINT}/auth0/login`;
+    } catch (error) {
+        console.error('Google login failed:', error);
+    } finally {
+        dispatch(setLoading(false));
+    }
+};
   const submitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData(); // FormData object
@@ -200,12 +209,22 @@ const Signup = () => {
                 <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait
               </Button>
             ) : (
-              <Button
-                type='submit'
-                className='w-full bg-[#000000] hover:bg-indigo-600 text-white'
-              >
-                Signup
-              </Button>
+              <>
+                <Button
+                  type='submit'
+                  className='w-full bg-[#000000] hover:bg-indigo-600 text-white'
+                >
+                  Signup
+                </Button>
+                <Button
+                  type='button'
+                  onClick={handleGoogleAuth}
+                  className='w-full bg-[#4285F4] hover:bg-[#357AE8] text-white mt-2'
+                >
+                  Auth with Google
+                </Button>
+              </>
+              
             )}
 
             <div className='text-sm text-[#6B6B6B]'>

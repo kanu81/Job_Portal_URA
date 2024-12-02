@@ -1,7 +1,8 @@
+
 import express from "express";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
 import { applyJob, getApplicants, getAppliedJobs, updateStatus } from "../controllers/application.controller.js";
- 
+ import authMiddleware from "../middlewares/Midchoice.js";
 const router = express.Router();
 
 router.route("/apply/:id").get(isAuthenticated, applyJob);

@@ -14,7 +14,7 @@ const Navbar = () => {
     const { user } = useSelector(store => store.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    console.log("user:",user);
     const logoutHandler = async () => {
         try {
             const res = await axios.get(`${USER_API_END_POINT}/logout`, { withCredentials: true });
@@ -28,11 +28,15 @@ const Navbar = () => {
             toast.error(error.response.data.message);
         }
     }
+
+    // Check the correct source for the profile photo
+    const avatarUrl = user?.profile?.profilePhoto || user?._json?.picture || 'default-avatar-url.jpg';
+
     return (
         <div className='bg-white border-b border-gray-900 '>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
                 <div>
-                    <h1 className='text-2xl  font-bold text-[#FF0000]'>U<span className='text-[#000000]'>Placement</span></h1>
+                    <h1 className='text-2xl font-bold text-[#FF0000]'>U<span className='text-[#000000]'>Placement</span></h1>
                 </div>
                 <div className='flex items-center gap-12 '>
                     <ul className='flex font-medium items-center gap-5'>
@@ -50,8 +54,6 @@ const Navbar = () => {
                                 </>
                             )
                         }
-
-
                     </ul>
                     {
                         !user ? (
@@ -63,14 +65,14 @@ const Navbar = () => {
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
-                                        <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                        <AvatarImage src={avatarUrl} alt="User Avatar" />
                                     </Avatar>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
                                     <div className=''>
                                         <div className='flex gap-2 space-y-2'>
                                             <Avatar className="cursor-pointer">
-                                                <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                                <AvatarImage src={avatarUrl} alt="User Avatar" />
                                             </Avatar>
                                             <div>
                                                 <h4 className='font-medium'>{user?.fullname}</h4>
@@ -97,10 +99,8 @@ const Navbar = () => {
                             </Popover>
                         )
                     }
-
                 </div>
             </div>
-
         </div>
     )
 }

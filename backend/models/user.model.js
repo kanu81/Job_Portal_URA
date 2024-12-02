@@ -1,38 +1,48 @@
+
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     fullname: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     phoneNumber: {
-        type: Number,
-        required: true
+        type: String, // Changed to String to allow non-numeric formats
+        required: false, // Made optional for Auth0 users
     },
-    password:{
-        type:String,
-        required:true,
+    password: {
+        type: String,
+        required: function () {
+            // Password is required only if the user is not from Auth0
+            return !this.auth0Id;
+        },
     },
-    role:{
-        type:String,
-        enum:['student','recruiter'],
-        required:true
+    auth0Id: {
+        type: String, // Auth0 unique identifier
+        required: false,
     },
-    profile:{
-        bio:{type:String},
-        skills:[{type:String}],
-        resume:{type:String}, // URL to resume file
-        resumeOriginalName:{type:String},
-        company:{type:mongoose.Schema.Types.ObjectId, ref:'Company'}, 
-        profilePhoto:{
-            type:String,
-            default:""
-        }
+    role: {
+        type: String,
+        enum: ['student', 'recruiter'],
+        required: true,
+        default: 'student', // Default role is 'student'
     },
-},{timestamps:true});
+    profile: {
+        bio: { type: String },
+        skills: [{ type: String }],
+        resume: { type: String }, // URL to resume file
+        resumeOriginalName: { type: String },
+        company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
+        profilePhoto: {
+            type: String,
+            default: "",
+        },
+    },
+}, { timestamps: true });
+
 export const User = mongoose.model('User', userSchema);
