@@ -25,7 +25,7 @@ const Jobs = () => {
   }, [allJobs, searchedQuery]);
 
   return (
-    <div className='bg-gray-100'>
+    <div  className='bg-gray-100 min-h-screen data-scroll-container'>
       <Navbar />
       {/* Set the background color to gray-100 for the main container */}
       <div className="max-w-7xl mx-auto mt-5 bg-gray-100">

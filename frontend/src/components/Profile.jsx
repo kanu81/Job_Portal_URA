@@ -19,7 +19,7 @@ const Profile = () => {
     const {user} = useSelector(store=>store.auth);
     const avatarUrl = user?.profile?.profilePhoto || user?._json?.picture || 'default-avatar-url.jpg';
     return (
-        <div>
+        <div >
             <Navbar />
             
             <div className='max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8'>

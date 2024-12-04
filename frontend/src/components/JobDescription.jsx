@@ -53,7 +53,7 @@ const JobDescription = () => {
 
     return (
        
-        <div className='bg-gray-100 min-h-screen p-8'>
+        <div  className='bg-gray-100 min-h-screen p-8 data-scroll-container'>
             {/* Back and Home Buttons */}
             <div className='flex gap-4 mb-4'>
                 <Button onClick={() => navigate('/jobs')} className='bg-gray-500 hover:bg-blue-400 rounded-lg flex items-center gap-2 rounded-full'>
