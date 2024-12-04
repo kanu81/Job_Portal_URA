@@ -79,7 +79,7 @@ const Signup = () => {
   }, [user, navigate]);
 
   return (
-    <div className='min-h-screen h-xl flex items-center justify-center bg-gray-100'>
+    <div  className='min-h-screen h-xl flex items-center justify-center bg-gray-100'>
       <div className='flex w-full h-xl max-w-5xl shadow-lg rounded-2xl overflow-hidden'>
         {/* Left side with Image, Title, and Back Button */}
         <div className='relative w-1/2 bg-gray-200 flex items-center justify-center'>

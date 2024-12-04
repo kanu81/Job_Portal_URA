@@ -33,7 +33,7 @@ const CompanyCreate = () => {
         }
     }
     return (
-        <div>
+        <div >
             <Navbar />
             <div className='max-w-4xl mx-auto'>
                 <div className='my-10'>
