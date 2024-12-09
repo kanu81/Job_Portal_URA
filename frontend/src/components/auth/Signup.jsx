@@ -60,6 +60,8 @@ const Signup = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
         withCredentials: true,
       });
+      alert("Registration successful! Please check your email to verify your account.");
+
       if (res.data.success) {
         navigate('/login');
         toast.success(res.data.message);
@@ -67,6 +69,7 @@ const Signup = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response?.data?.message || 'An error occurred.');
+      alert("Registration failed. Please try again.");
     } finally {
       dispatch(setLoading(false));
     }
@@ -79,7 +82,7 @@ const Signup = () => {
   }, [user, navigate]);
 
   return (
-    <div  className='min-h-screen h-xl flex items-center justify-center bg-gray-100'>
+    <div className='min-h-screen h-xl flex items-center justify-center bg-gray-100'>
       <div className='flex w-full h-xl max-w-5xl shadow-lg rounded-2xl overflow-hidden'>
         {/* Left side with Image, Title, and Back Button */}
         <div className='relative w-1/2 bg-gray-200 flex items-center justify-center'>

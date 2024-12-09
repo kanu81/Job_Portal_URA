@@ -2,24 +2,25 @@
 // import { login, logout, register, updateProfile } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
 
-
 import express from "express";
 import userController from "../controllers/user.controller.js";
 import { singleUpload } from "../middlewares/mutler.js";
 
-import passport from "passport";
+import passport from "../utils/passport.js";
 import jwt from "jsonwebtoken";
 import auth0Config from "../utils/auth0Provider.js";
 import { User } from "../models/user.model.js";
 const router = express.Router();
 
-const { register, login, logout, updateProfile, findOrCreateUserFromAuth0} = userController;
+const { register, login, logout, updateProfile, findOrCreateUserFromAuth0,verifyEmail} = userController;
 
 router.route("/register").post(singleUpload, register);
 router.route("/login").post(login);
 router.route("/logout").get(logout);
 
 router.route("/profile/update").post(isAuthenticated, singleUpload, updateProfile);
+
+router.get("/verify-email", verifyEmail);
 
 router.get(
     "/auth0/login",
@@ -98,6 +99,7 @@ router.get("/auth0/logout", (req, res) => {
         );
     });
 });
+
 router.route("/profile").get(async (req, res) => {
     try {
         const token = req.cookies.token;
