@@ -22,6 +22,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.6",
+    "express": "^4.21.2",
     "framer-motion": "^11.3.7",
     "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.395.0",
