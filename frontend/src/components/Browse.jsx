@@ -58,7 +58,7 @@ const Browse = () => {
     }, [dispatch]);
 
     return (
-        <div className='bg-gray-100'>
+        <div className='bg-gray-100 dark:bg-gray-900'>
             <Navbar />
             <div className='max-w-7xl mx-auto my-10'>
                 <h1 className='font-bold text-xl my-10'>Search Results ({allJobs.length})</h1>
