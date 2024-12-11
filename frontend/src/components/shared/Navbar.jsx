@@ -343,6 +343,8 @@ import { USER_API_END_POINT } from '@/utils/constant';
 import { setUser } from '@/redux/authSlice';
 import { toast } from 'sonner';
 import { ThemeContext } from '@/ThemeProvider';
+// import { IoIosNotifications } from "react-icons/io";
+import { FaBell } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
@@ -406,6 +408,11 @@ const Navbar = () => {
                 <li>
                   <Link to="/browse" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition duration-300">
                     Browse
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/notification" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition duration-300">
+                  <FaBell />
                   </Link>
                 </li>
               </>
