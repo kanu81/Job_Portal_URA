@@ -15,7 +15,7 @@ import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AuthCallback from './components/auth/AuthCallback';
-import Chatbot from './components/chatbot'
+
 
 const appRouter = createBrowserRouter([
   {

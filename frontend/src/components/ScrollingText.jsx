@@ -88,7 +88,7 @@ const ScrollingText = () => {
 
         .elem span,
         .elem2 span {
-          font-style: italic;
+          font-style: italic;  
           font-family: "silk serif";
           color: transparent;
         }
