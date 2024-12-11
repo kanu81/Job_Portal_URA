@@ -230,12 +230,12 @@ const Signup = () => {
               
             )}
 
-            <div className='text-sm text-[#6B6B6B]'>
+            {/* <div className='text-sm text-[#6B6B6B]'>
               Already have an account?{' '}
               <Link to='/login' className='text-indigo-500 hover:underline'>
                 Login
               </Link>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
