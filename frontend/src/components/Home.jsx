@@ -206,7 +206,7 @@ const Home = () => {
   
         {/* Background Image */}
         <div 
-          className="w-1/2 h-[400px] bg-no-repeat bg-center bg-cover " 
+          className="w-1/2 h-[400px] bg-no-repeat bg-center bg-cover rounded-l-3xl" 
           style={{ backgroundImage: 'url("https://i.pinimg.com/originals/01/32/31/01323190cd6933de96287a5804fd636a.gif")' }}
         >
         </div>

@@ -15,7 +15,7 @@ import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AuthCallback from './components/auth/AuthCallback';
-
+import Notification from './components/Notification'
 
 const appRouter = createBrowserRouter([
   {
@@ -37,6 +37,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/jobs",
     element: <Jobs />
+  },
+  {
+    path: "/notifications",
+    element: <Notification />
   },
   {
     path: "/description/:id",

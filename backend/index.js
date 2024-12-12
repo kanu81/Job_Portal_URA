@@ -118,13 +118,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// // CORS configuration
-// const corsOptions = {
-//     origin: 'http://localhost:5173',
-//     credentials: true // Allow cookies and credentials to be included
-// };
 
-// app.use(cors(corsOptions));
 app.use(cors({
     origin: 'http://localhost:5173', // Allow only your frontend's domain
     credentials: true, // Allow cookies
