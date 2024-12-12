@@ -102,9 +102,16 @@
 
 
 
+<<<<<<< HEAD
 // import React from 'react';
 
 // const ScrollingText = () => {
+=======
+// import React, { useState } from 'react';
+
+// const ScrollingText = () => {
+  
+>>>>>>> 4e4c840dc30351ac3cb65704a9aff0f168c4f8bd
 //   return (
 //     <div id="page5" data-scroll-container>
 //       <div className="elem dark:text-gray-300">
@@ -192,7 +199,11 @@
 
 //         .elem span,
 //         .elem2 span {
+<<<<<<< HEAD
 //           font-style: italic;
+=======
+//           font-style: italic;  
+>>>>>>> 4e4c840dc30351ac3cb65704a9aff0f168c4f8bd
 //           font-family: "silk serif";
 //           color: transparent;
 //         }
@@ -211,7 +222,11 @@ const ScrollingText = () => {
   const { theme } = useContext(ThemeContext);
 
   const textStrokeColor = theme === 'dark' ? '#fff' : '#000';
+<<<<<<< HEAD
   const textGlowColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0)';
+=======
+  const textGlowColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+>>>>>>> 4e4c840dc30351ac3cb65704a9aff0f168c4f8bd
 
   return (
     <div id="page5" data-scroll-container>

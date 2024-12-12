@@ -16,6 +16,10 @@ import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AuthCallback from './components/auth/AuthCallback';
 import Notification from './components/Notification'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e4c840dc30351ac3cb65704a9aff0f168c4f8bd
 
 const appRouter = createBrowserRouter([
   {
@@ -49,6 +53,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <Browse />
+  },
+  {
+    path: "/notifications",
+    element: <Notification />
   },
   {
     path: "/profile",
