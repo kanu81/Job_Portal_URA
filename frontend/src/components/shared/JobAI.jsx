@@ -34,7 +34,7 @@ function JobAI() {
   const [chatHistory, setChatHistory] = useState([]);
   const [question, setQuestion] = useState("");
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
-  const API_KEY = import.meta.env.VITE_WOW; // api key called from .env
+  const API_KEY = import.meta.env.VITE_WOW; // api key called from .env and path of this variable to be changed to reach .env and add api key in .env by this variable name
 
   const chatContainerRef = useRef(null);
 
