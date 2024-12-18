@@ -15,9 +15,8 @@ import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AuthCallback from './components/auth/AuthCallback';
-import Notification from './components/Notification'
-
-
+// import Notification from './components/Notification'
+import JobAI from './components/shared/JobAI'
 const appRouter = createBrowserRouter([
   {
     path: '/auth/callback',
@@ -40,8 +39,8 @@ const appRouter = createBrowserRouter([
     element: <Jobs />
   },
   {
-    path: "/notifications",
-    element: <Notification />
+    path: "/JobAI",
+    element: <JobAI />
   },
   {
     path: "/description/:id",
@@ -50,10 +49,6 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <Browse />
-  },
-  {
-    path: "/notifications",
-    element: <Notification />
   },
   {
     path: "/profile",

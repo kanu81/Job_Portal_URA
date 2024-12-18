@@ -495,8 +495,8 @@ import { setUser } from '@/redux/authSlice';
 import { toast } from 'sonner';
 import { ThemeContext } from '@/ThemeProvider';
 // import { IoIosNotifications } from "react-icons/io";
-import { FaBell } from "react-icons/fa6";
-
+// import { FaBell } from "react-icons/fa6";
+import { RiRobot2Fill } from "react-icons/ri";
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
@@ -562,8 +562,8 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/notification" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition duration-300">
-                  <FaBell />
+                  <Link to="/JobAI" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition duration-300">
+                  <RiRobot2Fill className="text-2xl"/>
                   </Link>
                 </li>
               </>

@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-// import "./App.css";                                      To be put into css file of project
+import "./App.css"                                  //To be put into css file of project
 // /* Custom Scrollbar Styles */
 // .scrollbar-thin::-webkit-scrollbar {
 //     width: 6px;
@@ -34,7 +34,8 @@ function JobAI() {
   const [chatHistory, setChatHistory] = useState([]);
   const [question, setQuestion] = useState("");
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
-  const API_KEY = import.meta.env.VITE_WOW; // api key called from .env and path of this variable to be changed to reach .env and add api key in .env by this variable name
+  const API_KEY = import.meta.env.VITE_WOW || "AIzaSyA037rT8FfFlOieXwWoFTjii8_rcle3oOs"; 
+ // api key called from .env and path of this variable to be changed to reach .env and add api key in .env by this variable name
 
   const chatContainerRef = useRef(null);
 
